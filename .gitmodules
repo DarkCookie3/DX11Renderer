@@ -1,0 +1,12 @@
+[submodule "Engine/Submodules/glm"]
+	path = Engine/Submodules/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "Engine/Submodules/dxmath"]
+	path = Engine/Submodules/dxmath
+	url = https://github.com/microsoft/DirectXMath.git
+[submodule "Engine/Submodules/ImGui"]
+	path = Engine/Submodules/ImGui
+	url = https://github.com/ocornut/imgui.git
+[submodule "Engine/Submodules/Assimp"]
+	path = Engine/Submodules/Assimp
+	url = https://github.com/assimp/assimp.git
