@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e2a8ce09-b225-4a32-9e5a-0d53bd6925b7}</ProjectGuid>
+    <RootNamespace>Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\GitDragonsLake\Engine\Submodules\Assimp\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>E:\GitDragonsLake\Engine\Submodules\Assimp\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)Engine\Submodules\Assimp\include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <LibraryPath>$(SolutionDir)Engine\Submodules\Assimp\lib\$(Configuration);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)Engine\Submodules\Assimp\include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <LibraryPath>$(SolutionDir)Engine\Submodules\Assimp\lib\$(Configuration);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Submodules\Assimp\lib\Debug;$(SolutionDir)Engine\Submodules\Assimp\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PreBuildEvent>
+      <Command> cd Submodules\Assimp
+ cmake CMakeLists.txt
+ cmake --build
+ &amp;&amp;
+ xcopy  /y "$(ProjectDir)Submodules\Assimp\bin\$(ConfigurationName)\*.dll" "$(SolutionDir)x64\$(ConfigurationName)"
+ </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Submodules\Assimp\lib\Debug;$(SolutionDir)Engine\Submodules\Assimp\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PreBuildEvent>
+      <Command> cd Submodules\Assimp
+ cmake CMakeLists.txt
+ cmake --build
+ &amp;&amp;
+ xcopy  /y "$(ProjectDir)Submodules\Assimp\bin\$(ConfigurationName)\*.dll" "$(SolutionDir)x64\$(ConfigurationName)"
+ </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\DXRenderer\Utils\DirectXTex\Shaders\Compiled;$(SolutionDir)Engine\DXRenderer\Utils\DirectXMath\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Submodules\Assimp\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PreBuildEvent>
+      <Command> cd Submodules\Assimp
+ cmake -DASSIMP_BUILD_ZLIB=ON CMakeLists.txt
+ cmake --build $(SolutionDir)Engine\Submodules\Assimp
+ </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)Engine\Submodules\Assimp\bin\$(ConfigurationName)\*.dll" "$(SolutionDir)x64\$(ConfigurationName)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\DXRenderer\Utils\DirectXTex\Shaders\Compiled;$(SolutionDir)Engine\DXRenderer\Utils\DirectXMath\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>assimp-vc143-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Submodules\Assimp\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PreBuildEvent>
+      <Command> cd Submodules\Assimp
+ cmake -DASSIMP_BUILD_ZLIB=ON CMakeLists.txt
+ cmake --build $(SolutionDir)Engine\Submodules\Assimp
+ </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)Engine\Submodules\Assimp\bin\$(ConfigurationName)\*.dll" "$(SolutionDir)x64\$(ConfigurationName)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Common\AssertMacros.h" />
+    <ClInclude Include="Common\Keys.h" />
+    <ClInclude Include="Common\MouseCursor.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\Decal.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\DirLight.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\GBuffer.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\LightMaterial.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\Material.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\OpacityMeshGroup.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\PBR_SRVGroup.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\PointLight.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\Skybox.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\SmokeEmitter.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\SmokeParticle.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\SpotLight.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\TriangleIndicesDX.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\TriangleOctreeDX.h" />
+    <ClInclude Include="DXRenderer\DXObjects\BlendState.h" />
+    <ClInclude Include="DXRenderer\DXObjects\DepthStencilState.h" />
+    <ClInclude Include="DXRenderer\DXObjects\DomainShader.h" />
+    <ClInclude Include="DXRenderer\DXObjects\GeometryShader.h" />
+    <ClInclude Include="DXRenderer\DXObjects\HullShader.h" />
+    <ClInclude Include="DXRenderer\DXObjects\RasterizerState.h" />
+    <ClInclude Include="DXRenderer\DXObjects\SamplerState.h" />
+    <ClInclude Include="DXRenderer\DXObjects\ShaderResourceView.h" />
+    <ClInclude Include="DXRenderer\DXObjects\StructuredBuffer.h" />
+    <ClInclude Include="DXRenderer\Managers\DecalSystem.h" />
+    <ClInclude Include="DXRenderer\Managers\LightSystem.h" />
+    <ClInclude Include="DXRenderer\Managers\MaterialManager.h" />
+    <ClInclude Include="DXRenderer\Managers\ParticleSystem.h" />
+    <ClInclude Include="DXRenderer\Managers\PostProcess.h" />
+    <ClInclude Include="DXRenderer\Managers\ReflectionCapturer.h" />
+    <ClInclude Include="DXRenderer\Managers\TransformSystem.h" />
+    <ClInclude Include="DXRenderer\Math\BoxDX.h" />
+    <ClInclude Include="DXRenderer\Math\Cube.h" />
+    <ClInclude Include="DXRenderer\Math\HitRecordDX.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\Model.h" />
+    <ClInclude Include="DXRenderer\DXObjects\IndexBuffer.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\InstancedMesh.h" />
+    <ClInclude Include="DXRenderer\Managers\MeshSystem.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\CameraDX.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\TransformDX.h" />
+    <ClInclude Include="DXRenderer\Managers\Renderer.h" />
+    <ClInclude Include="DXRenderer\Math\RayDX.h" />
+    <ClInclude Include="DXRenderer\Math\Sphere.h" />
+    <ClInclude Include="DXRenderer\Utils\CubeSideIndexRoationAngles.h" />
+    <ClInclude Include="DXRenderer\Utils\DirectXTex\BC.h" />
+    <ClInclude Include="DXRenderer\Utils\DirectXTex\BCDirectCompute.h" />
+    <ClInclude Include="DXRenderer\Utils\DirectXTex\d3dx12.h" />
+    <ClInclude Include="DXRenderer\Utils\DirectXTex\DDS.h" />
+    <ClInclude Include="DXRenderer\Utils\DirectXTex\DirectXTex.h" />
+    <ClInclude Include="DXRenderer\Utils\DirectXTex\DirectXTexP.h" />
+    <ClInclude Include="DXRenderer\Utils\DirectXTex\filters.h" />
+    <ClInclude Include="DXRenderer\Utils\DirectXTex\scoped.h" />
+    <ClInclude Include="DXRenderer\Utils\DxTexLoader\DDSTextureLoader11.h" />
+    <ClInclude Include="DXRenderer\Utils\imgui\imconfig.h" />
+    <ClInclude Include="DXRenderer\Utils\imgui\imgui.h" />
+    <ClInclude Include="DXRenderer\Utils\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="DXRenderer\Utils\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="DXRenderer\Utils\imgui\imgui_internal.h" />
+    <ClInclude Include="DXRenderer\Utils\imgui\imstb_rectpack.h" />
+    <ClInclude Include="DXRenderer\Utils\imgui\imstb_textedit.h" />
+    <ClInclude Include="DXRenderer\Utils\imgui\imstb_truetype.h" />
+    <ClInclude Include="DXRenderer\Utils\InitTexture.h" />
+    <ClInclude Include="DXRenderer\Utils\RandomOnSphere.h" />
+    <ClInclude Include="DXRenderer\Utils\SolidVector\SolidVector.h" />
+    <ClInclude Include="DXRenderer\Utils\WideCharConverter.h" />
+    <ClInclude Include="Raycaster\Utils\Camera.h" />
+    <ClInclude Include="Common\Engine.h" />
+    <ClInclude Include="Common\LogMacros.h" />
+    <ClInclude Include="DXRenderer\DXObjects\ConstantBuffer.h" />
+    <ClInclude Include="DXRenderer\DXObjects\PixelShader.h" />
+    <ClInclude Include="DXRenderer\DXObjects\RenderTarget.h" />
+    <ClInclude Include="DXRenderer\DXObjects\Swapchain.h" />
+    <ClInclude Include="DXRenderer\DXObjects\VertexBuffer.h" />
+    <ClInclude Include="DXRenderer\DXObjects\VertexShader.h" />
+    <ClInclude Include="DXRenderer\Managers\ModelsManager.h" />
+    <ClInclude Include="DXRenderer\Managers\ShadersManager.h" />
+    <ClInclude Include="DXRenderer\Managers\TexturesManager.h" />
+    <ClInclude Include="DXRenderer\Utils\d3d.h" />
+    <ClInclude Include="DXRenderer\Utils\DxRes.h" />
+    <ClInclude Include="DXRenderer\CustomTypes\Vertex.h" />
+    <ClInclude Include="DXRenderer\Utils\win.h" />
+    <ClInclude Include="DXRenderer\Utils\win_def.h" />
+    <ClInclude Include="DXRenderer\Utils\win_undef.h" />
+    <ClInclude Include="DXRenderer\Window\WindowDX.h" />
+    <ClInclude Include="Raycaster\Render\LightSource.h" />
+    <ClInclude Include="Raycaster\Render\Scene.h" />
+    <ClInclude Include="Raycaster\Source\Draggers\IObjectMover.h" />
+    <ClInclude Include="Raycaster\Source\Draggers\MeshMover.h" />
+    <ClInclude Include="Raycaster\Source\Draggers\PlaneMover.h" />
+    <ClInclude Include="Raycaster\Source\Draggers\SphereMover.h" />
+    <ClInclude Include="Raycaster\Source\Draggers\TriangleMover.h" />
+    <ClInclude Include="Raycaster\Source\Entities\DirLightEntity.h" />
+    <ClInclude Include="Raycaster\Source\Entities\MeshEntity.h" />
+    <ClInclude Include="Raycaster\Source\Entities\PlaneEntity.h" />
+    <ClInclude Include="Raycaster\Source\Entities\PointLightEntity.h" />
+    <ClInclude Include="Raycaster\Source\Entities\SphereEntity.h" />
+    <ClInclude Include="Raycaster\Source\Entities\SpotLightEntity.h" />
+    <ClInclude Include="Raycaster\Source\Entities\TriangleEntity.h" />
+    <ClInclude Include="Raycaster\Source\Math\DirLight.h" />
+    <ClInclude Include="Raycaster\Source\Math\Mesh.h" />
+    <ClInclude Include="Raycaster\Source\Math\Plane.h" />
+    <ClInclude Include="Raycaster\Source\Math\PointLight.h" />
+    <ClInclude Include="Raycaster\Source\Math\Ray.h" />
+    <ClInclude Include="Raycaster\Source\Math\Sphere.h" />
+    <ClInclude Include="Raycaster\Source\Math\SpotLight.h" />
+    <ClInclude Include="Raycaster\Source\Math\Triangle.h" />
+    <ClInclude Include="Raycaster\Utils\Box.h" />
+    <ClInclude Include="Raycaster\Utils\HitRecord.h" />
+    <ClInclude Include="Raycaster\Utils\LightMat.h" />
+    <ClInclude Include="Raycaster\Utils\ObjectRef.h" />
+    <ClInclude Include="Common\ParallelExecutor.h" />
+    <ClInclude Include="Common\Timer.h" />
+    <ClInclude Include="Raycaster\Utils\Transform.h" />
+    <ClInclude Include="Raycaster\Utils\TriangleOctree.h" />
+    <ClInclude Include="Raycaster\Windows\Window.h" />
+    <ClInclude Include="Submodules\dxmath\Extensions\DirectXMathAVX.h" />
+    <ClInclude Include="Submodules\dxmath\Extensions\DirectXMathAVX2.h" />
+    <ClInclude Include="Submodules\dxmath\Extensions\DirectXMathBE.h" />
+    <ClInclude Include="Submodules\dxmath\Extensions\DirectXMathF16C.h" />
+    <ClInclude Include="Submodules\dxmath\Extensions\DirectXMathFMA3.h" />
+    <ClInclude Include="Submodules\dxmath\Extensions\DirectXMathFMA4.h" />
+    <ClInclude Include="Submodules\dxmath\Extensions\DirectXMathSSE3.h" />
+    <ClInclude Include="Submodules\dxmath\Extensions\DirectXMathSSE4.h" />
+    <ClInclude Include="Submodules\dxmath\Inc\DirectXCollision.h" />
+    <ClInclude Include="Submodules\dxmath\Inc\DirectXColors.h" />
+    <ClInclude Include="Submodules\dxmath\Inc\DirectXMath.h" />
+    <ClInclude Include="Submodules\dxmath\Inc\DirectXPackedVector.h" />
+    <ClInclude Include="Submodules\dxmath\MatrixStack\DirectXMatrixStack.h" />
+    <ClInclude Include="Submodules\dxmath\SHMath\DirectXSH.h" />
+    <ClInclude Include="Submodules\dxmath\Stereo3D\Stereo3DMatrixHelper.h" />
+    <ClInclude Include="Submodules\dxmath\XDSP\XDSP.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Common\Engine.cpp" />
+    <ClCompile Include="DXRenderer\CustomTypes\DirLight.cpp" />
+    <ClCompile Include="DXRenderer\CustomTypes\GBuffer.cpp" />
+    <ClCompile Include="DXRenderer\CustomTypes\InstancedMesh.cpp" />
+    <ClCompile Include="DXRenderer\CustomTypes\Model.cpp" />
+    <ClCompile Include="DXRenderer\CustomTypes\PointLight.cpp" />
+    <ClCompile Include="DXRenderer\CustomTypes\Skybox.cpp" />
+    <ClCompile Include="DXRenderer\CustomTypes\SmokeEmitter.cpp" />
+    <ClCompile Include="DXRenderer\CustomTypes\SpotLight.cpp" />
+    <ClCompile Include="DXRenderer\CustomTypes\TriangleOctreeDX.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\BlendState.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\DepthStencilState.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\DomainShader.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\GeometryShader.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\HullShader.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\IndexBuffer.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\PixelShader.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\RasterizerState.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\RenderTarget.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\SamplerState.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\ShaderResourceView.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\StructuredBuffer.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\Swapchain.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\VertexBuffer.cpp" />
+    <ClCompile Include="DXRenderer\DXObjects\VertexShader.cpp" />
+    <ClCompile Include="DXRenderer\Managers\DecalSystem.cpp" />
+    <ClCompile Include="DXRenderer\Managers\LightSystem.cpp" />
+    <ClCompile Include="DXRenderer\Managers\MaterialManager.cpp" />
+    <ClCompile Include="DXRenderer\Managers\MeshSystem.cpp" />
+    <ClCompile Include="DXRenderer\Managers\ModelsManager.cpp" />
+    <ClCompile Include="DXRenderer\Managers\ParticleSystem.cpp" />
+    <ClCompile Include="DXRenderer\Managers\PostProcess.cpp" />
+    <ClCompile Include="DXRenderer\Managers\ReflectionCapturer.cpp" />
+    <ClCompile Include="DXRenderer\Managers\Renderer.cpp" />
+    <ClCompile Include="DXRenderer\Managers\TexturesManager.cpp" />
+    <ClCompile Include="DXRenderer\Managers\TransformSystem.cpp" />
+    <ClCompile Include="DXRenderer\Utils\d3d.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\BC.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\BC4BC5.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\BC6HBC7.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\BCDirectCompute.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexCompress.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexCompressGPU.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexConvert.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexD3D11.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexD3D12.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexDDS.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexFlipRotate.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexHDR.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexImage.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexMipmaps.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexMisc.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexNormalMaps.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexPMAlpha.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexResize.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexTGA.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexUtil.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DirectXTex\DirectXTexWIC.cpp" />
+    <ClCompile Include="DXRenderer\Utils\DxTexLoader\DDSTextureLoader11.cpp" />
+    <ClCompile Include="DXRenderer\Utils\imgui\imgui.cpp" />
+    <ClCompile Include="DXRenderer\Utils\imgui\imgui_demo.cpp" />
+    <ClCompile Include="DXRenderer\Utils\imgui\imgui_draw.cpp" />
+    <ClCompile Include="DXRenderer\Utils\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="DXRenderer\Utils\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="DXRenderer\Utils\imgui\imgui_tables.cpp" />
+    <ClCompile Include="DXRenderer\Utils\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="DXRenderer\Window\WindowDX.cpp" />
+    <ClCompile Include="Raycaster\Render\Scene.cpp" />
+    <ClCompile Include="Raycaster\Utils\TriangleOctree.cpp" />
+    <ClCompile Include="Raycaster\Windows\Window.cpp" />
+    <ClCompile Include="Submodules\dxmath\SHMath\DirectXSH.cpp" />
+    <ClCompile Include="Submodules\dxmath\SHMath\DirectXSHD3D11.cpp" />
+    <ClCompile Include="Submodules\dxmath\SHMath\DirectXSHD3D12.cpp" />
+    <ClCompile Include="Submodules\dxmath\Stereo3D\Stereo3DMatrixHelper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="DXRenderer\Resources\Models\Samurai\dds\Decor_BaseColor.dds" />
+    <Image Include="DXRenderer\Resources\Models\Samurai\dds\Eyes_BaseColor.dds" />
+    <Image Include="DXRenderer\Resources\Models\Samurai\dds\Hands_BaseColor.dds" />
+    <Image Include="DXRenderer\Resources\Models\Samurai\dds\Head_BaseColor.dds" />
+    <Image Include="DXRenderer\Resources\Models\Samurai\dds\Helmet_BaseColor.dds" />
+    <Image Include="DXRenderer\Resources\Models\Samurai\dds\Pants_BaseColor.dds" />
+    <Image Include="DXRenderer\Resources\Models\Samurai\dds\Sword_BaseColor.dds" />
+    <Image Include="DXRenderer\Resources\Models\Samurai\dds\Torso_BaseColor.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DXRenderer\Utils\DirectXTex\DirectXTex.inl" />
+    <None Include="DXRenderer\Utils\DirectXTex\Shaders\CompileShaders.cmd" />
+    <None Include="Submodules\dxmath\Inc\DirectXCollision.inl" />
+    <None Include="Submodules\dxmath\Inc\DirectXMathConvert.inl" />
+    <None Include="Submodules\dxmath\Inc\DirectXMathMatrix.inl" />
+    <None Include="Submodules\dxmath\Inc\DirectXMathMisc.inl" />
+    <None Include="Submodules\dxmath\Inc\DirectXMathVector.inl" />
+    <None Include="Submodules\dxmath\Inc\DirectXPackedVector.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
