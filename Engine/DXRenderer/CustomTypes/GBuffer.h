@@ -21,7 +21,7 @@ private:
 	DxResPtr<ID3D11Texture2D> m_depthStencilTextureCopy;
 	ShaderResourceView m_depthStencilTextureCopySRV;
 
-	std::array<DxResPtr<ID3D11Texture2D>, 5> m_textures;
-	std::array<ShaderResourceView, 5> m_srv;
-	std::array<DxResPtr<ID3D11RenderTargetView>, 5> m_rtv;
+	std::array<DxResPtr<ID3D11Texture2D>, 4> m_textures;
+	std::array<ShaderResourceView, 4> m_srv;
+	std::array<DxResPtr<ID3D11RenderTargetView>, 4> m_rtv;
 };

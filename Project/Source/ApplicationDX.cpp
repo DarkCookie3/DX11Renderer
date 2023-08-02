@@ -282,7 +282,7 @@ void ApplicationDX::InitSetup()
 	lightSystem.AddSpotLight(emptyModel, defaultLightMat, tempTrans, lightSource1, 0.2f, 0.05f);
 	defaultLightMat.intensity = 1.0f;
 
-	tempTrans.rotation = DirectX::XMQuaternionRotationRollPitchYaw(AI_MATH_PI * (0.5f), -AI_MATH_PI * (0.1f), 0);
+	tempTrans.rotation = DirectX::XMQuaternionRotationRollPitchYaw(AI_MATH_PI * (0.45f), -AI_MATH_PI * (0.1f), 0);
 	orangeMaterialOfLightMat->emissionColor /= 10;
 	defaultLightMat.material = orangeMaterialOfLightMat;
 	lightSystem.AddDirLight(tempTrans, defaultLightMat);

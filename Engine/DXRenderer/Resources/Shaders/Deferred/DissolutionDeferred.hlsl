@@ -28,7 +28,6 @@ struct PSOutput
     float2 roughness_metallness : SV_TARGET1;
     float4 normals : SV_TARGET2;
     float3 emission : SV_TARGET3;
-    int objectId : SV_TARGET4;
 };
 
 PSOutput PShader(PSInput input)

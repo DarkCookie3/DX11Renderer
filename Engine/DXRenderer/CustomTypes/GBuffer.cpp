@@ -3,9 +3,9 @@
 
 GBuffer::GBuffer()
 {
-	std::array<D3D11_TEXTURE2D_DESC, 5> texDesc;
+	std::array<D3D11_TEXTURE2D_DESC, 4> texDesc;
 
-	ZeroMemory(texDesc.data(), sizeof(D3D11_TEXTURE2D_DESC) * 5);
+	ZeroMemory(texDesc.data(), sizeof(D3D11_TEXTURE2D_DESC) * 4);
 
 	auto& window = Engine::GetInstance().GetWindow();
 
@@ -13,7 +13,6 @@ GBuffer::GBuffer()
 	texDesc[1].Format = DXGI_FORMAT_R8G8_UNORM;
 	texDesc[2].Format = DXGI_FORMAT_R16G16B16A16_SNORM;
 	texDesc[3].Format = DXGI_FORMAT_R16G16B16A16_FLOAT;
-	texDesc[4].Format = DXGI_FORMAT_R32_UINT;
 
 	for (int i = 0; i < texDesc.size(); i++)
 	{
