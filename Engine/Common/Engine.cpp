@@ -45,7 +45,7 @@ void Engine::ChangeCameraState()
 {
 	if (m_keys.RMB == true)
 	{
-		static bool flashlightFixedToCamera = true;
+		static bool flashlightFixedToCamera = false;
 		static bool FlockedFlag = false;
 		if (m_keys.F)
 		{

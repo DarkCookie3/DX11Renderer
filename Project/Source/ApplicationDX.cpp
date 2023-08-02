@@ -24,7 +24,7 @@ ApplicationDX::~ApplicationDX()
 
 void ApplicationDX::InitSetup()
 {
-	CameraDX camera = CameraDX({ 0, 2, -9, 1 }, { 0, 2, 1, 1 }, 0.1f, 100.0f, 60.0f);
+	CameraDX camera = CameraDX({ 2, 3, -30, 1 }, { 2, 2, 0, 1 }, 0.1f, 100.0f, 60.0f);
 	auto& engine = Engine::GetInstance();
 	engine.SetInputHandler(std::bind(&ApplicationDX::ProcessInput, this, std::placeholders::_1));
 	engine.SetWindowAndCamera(&m_window, camera, 10.0f, 4.f);
@@ -274,7 +274,7 @@ void ApplicationDX::InitSetup()
 	defaultLightMat.material = orangeMaterialOfLightMat;
 	//lightSystem.AddPointLight(instancedSphere, defaultLightMat, tempTrans, lightSource1);
 
-	tempTrans = camera.m_transform;
+	tempTrans.position = {0, 1, -5, 1};
 	tempTrans.scale = XMVectorSet(0.1, 0.1, 0.1, 1);
 	defaultLightMat.material = whiteMaterialOfLightMat;
 	defaultLightMat.intensity = 1000.0f;
@@ -282,12 +282,12 @@ void ApplicationDX::InitSetup()
 	lightSystem.AddSpotLight(emptyModel, defaultLightMat, tempTrans, lightSource1, 0.2f, 0.05f);
 	defaultLightMat.intensity = 1.0f;
 
-	tempTrans.rotation = DirectX::XMQuaternionRotationRollPitchYaw(AI_MATH_PI * (0.15f), -AI_MATH_PI * (0.3f), 0);
+	tempTrans.rotation = DirectX::XMQuaternionRotationRollPitchYaw(AI_MATH_PI * (0.5f), -AI_MATH_PI * (0.1f), 0);
 	orangeMaterialOfLightMat->emissionColor /= 10;
 	defaultLightMat.material = orangeMaterialOfLightMat;
 	lightSystem.AddDirLight(tempTrans, defaultLightMat);
 
-	tempTrans.position = { 2, -8.2, 0, 1 };
+	tempTrans.position = { 2, -9.0, 0, 1 };
 	tempTrans.scale = { 0.1, 0.1, 0.1, 1 };
 	auto emitterModel = instancedSphere->AddInstance(tempTrans, blueMaterialOfLightMat, OpacityMeshGroup::Opaque);
 	auto smokeEmitter = particleSystem.AddSmokeEmitter(0.35f, 1000, 0.1, emitterModel);
@@ -295,7 +295,7 @@ void ApplicationDX::InitSetup()
 	defaultLightMat.material = blueMaterialOfLightMat;
 	lightSystem.AddPointLightToModel(emitterModel, defaultLightMat, TransformDX::IdentityTransform());
 
-	tempTrans.position = { -3, -8.2, 0, 1 };
+	tempTrans.position = { -3, -9.0, 0, 1 };
 	auto emitterModel2 = instancedSphere->AddInstance(tempTrans, blueMaterialOfLightMat, OpacityMeshGroup::Opaque);
 	auto smokeEmitter2 = particleSystem.AddSmokeEmitter(0.35f, 1000, 0.1, emitterModel2);
 	smokeEmitter2->SetTexturesAndColors({ 1, 1, 1, 1 }, { 5, 2, 10, 1 }, smokeEMVA, smokeDBF, smokeRLU);

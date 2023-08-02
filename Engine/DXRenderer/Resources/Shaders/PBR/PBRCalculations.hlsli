@@ -78,7 +78,7 @@ float4 CalculatePBR(PBRInput input)
         
         lightDir = ClosestSphereDir(viewDir, input.micronormal, lightDir, sqrt(1 - radiusSin * radiusSin), radiusSin);
         
-        resultColor += shadowed * g_pointLights[i].intensity * min(falloffMacro, falloffMicro) * solidAngle * PBR(lightDir, viewDir, lightColor, baseReflectivity, input.albedo, input.micronormal, input.roughness, input.metalness, radiusSin);
+        resultColor += shadowed * g_pointLights[i].intensity * max(min(falloffMacro, falloffMicro), 0) * solidAngle * PBR(lightDir, viewDir, lightColor, baseReflectivity, input.albedo, input.micronormal, input.roughness, input.metalness, radiusSin);
     }
     
     [loop]
@@ -107,7 +107,7 @@ float4 CalculatePBR(PBRInput input)
             lightDir = ClosestSphereDir(viewDir, input.micronormal, lightDir, sqrt(1 - radiusSin * radiusSin), radiusSin);
             
             float3 lightColor = coneFactor * g_spotLights[j].color * CalculateTextureMaskTransmittance(g_spotLights[j], input.pixelWorldPos);
-            resultColor += shadowed * g_spotLights[j].intensity * min(falloffMacro, falloffMicro) * solidAngle * PBR(lightDir, viewDir, lightColor, baseReflectivity, input.albedo, input.micronormal, input.roughness, input.metalness, radiusSin);
+            resultColor += shadowed * g_spotLights[j].intensity * max(min(falloffMacro, falloffMicro), 0) * solidAngle * PBR(lightDir, viewDir, lightColor, baseReflectivity, input.albedo, input.micronormal, input.roughness, input.metalness, radiusSin);
         }
     }
     
