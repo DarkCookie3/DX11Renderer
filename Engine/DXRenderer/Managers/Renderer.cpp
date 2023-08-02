@@ -233,14 +233,6 @@ void Renderer::DrawDeferred()
 	gBuffer.ClearRTV(m_clearColor);
 
 	BindBlendState("opaqueBlend");
-	//depth prepass
-	s_devcon->HSSetShader(nullptr, nullptr, 0);
-	s_devcon->DSSetShader(nullptr, nullptr, 0);
-	s_devcon->GSSetShader(nullptr, nullptr, 0);
-	shadersManager.GetVertexShader(L"FlatShadowVertex")->Bind();
-	shadersManager.GetPixelShader(L"ShadowPixel")->Bind();
-	meshSystem.Render(OpacityMeshGroup::Opaque, true, true, false);
-	////////////////////////////
 	meshSystem.Render(OpacityMeshGroup::Opaque, false, false, false);
 
 	D3D11_DEPTH_STENCIL_DESC depthStencilDesc;

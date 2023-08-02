@@ -234,7 +234,7 @@ void LightSystem::GenerateShadowMaps(std::vector<PackedDirLight>& packedDirLight
 
 	D3D11_RASTERIZER_DESC shadowRasterizerDesc;
 	shadowRasterizerDesc.FillMode = D3D11_FILL_SOLID;
-	shadowRasterizerDesc.CullMode = D3D11_CULL_BACK;
+	shadowRasterizerDesc.CullMode = D3D11_CULL_FRONT;
 	shadowRasterizerDesc.FrontCounterClockwise = false;
 	shadowRasterizerDesc.DepthBias = -3;
 	shadowRasterizerDesc.DepthBiasClamp = 0;

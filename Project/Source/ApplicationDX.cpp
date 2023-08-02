@@ -43,7 +43,7 @@ void ApplicationDX::InitSetup()
 	DxResPtr<ID3D11Texture2D> graniteRoughness;
 	DxResPtr<ID3D11Texture2D> graniteMetal;
 	texturesManager.GetTexture(graniteColor, L"graniteColor.dds");
-	texturesManager.GetTexture(graniteNormal, L"graniteNormal.dds");
+	texturesManager.GetTexture(graniteNormal, L"down_normal.dds");
 	texturesManager.GetTexture(graniteRoughness, L"graniteRoughness.dds");
 	texturesManager.GetTexture(graniteMetal, L"graniteMetal.dds");
 	DxResPtr<ID3D11Texture2D> testTexture2;
@@ -243,9 +243,9 @@ void ApplicationDX::InitSetup()
 			tempTrans.position = DirectX::XMVectorAdd(cube1.position, DirectX::XMVectorSet(2 * i, -3, 2 * k, 0));
 			tempTrans.scale = DirectX::XMVectorAdd(cube1.scale, DirectX::XMVectorSet(2 * i + k, 2 * i + k, 2 * i + k, 0));
 			samurai->AddInstanceWithDefaultMaterial(tempTrans, OpacityMeshGroup::Opaque);
-			for (int m = 0; m < 2; m++)
+			for (int m = 0; m < 4; m++)
 			{
-				tempTrans.position = DirectX::XMVectorAdd(cube1.position + XMVectorSet(5, 1 * m, 5, 0), DirectX::XMVectorSet(10 + i * 5, 10 + k * 5, 10 + m * 5, 0));
+				tempTrans.position = DirectX::XMVectorSet(rand() % 30 - 15, 5 + rand() % 15, rand() % 15, 0);
 				instancedCube->AddInstance(tempTrans, tempMat, OpacityMeshGroup::Opaque);
 			}
 		}
@@ -287,7 +287,7 @@ void ApplicationDX::InitSetup()
 	defaultLightMat.material = orangeMaterialOfLightMat;
 	lightSystem.AddDirLight(tempTrans, defaultLightMat);
 
-	tempTrans.position = { 2, -7, 0, 1 };
+	tempTrans.position = { 2, -8.2, 0, 1 };
 	tempTrans.scale = { 0.1, 0.1, 0.1, 1 };
 	auto emitterModel = instancedSphere->AddInstance(tempTrans, blueMaterialOfLightMat, OpacityMeshGroup::Opaque);
 	auto smokeEmitter = particleSystem.AddSmokeEmitter(0.35f, 1000, 0.1, emitterModel);
@@ -295,7 +295,7 @@ void ApplicationDX::InitSetup()
 	defaultLightMat.material = blueMaterialOfLightMat;
 	lightSystem.AddPointLightToModel(emitterModel, defaultLightMat, TransformDX::IdentityTransform());
 
-	tempTrans.position = { -6, -7, 0, 1 };
+	tempTrans.position = { -3, -8.2, 0, 1 };
 	auto emitterModel2 = instancedSphere->AddInstance(tempTrans, blueMaterialOfLightMat, OpacityMeshGroup::Opaque);
 	auto smokeEmitter2 = particleSystem.AddSmokeEmitter(0.35f, 1000, 0.1, emitterModel2);
 	smokeEmitter2->SetTexturesAndColors({ 1, 1, 1, 1 }, { 5, 2, 10, 1 }, smokeEMVA, smokeDBF, smokeRLU);
